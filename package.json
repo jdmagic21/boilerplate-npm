@@ -3,6 +3,7 @@
 	"author": "Jason Utt",
 	"description": "Free Code Camp microservices demo",
 	"keywords": ["freecodecamp", "microservices", "javascript"],
+	"license": "MIT",
 	"dependencies": {
 		"express": "^4.14.0"
 	},
