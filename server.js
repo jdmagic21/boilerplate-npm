@@ -8,6 +8,8 @@ var myApp = require('./myApp');
 var express = require('express');
 var app = express();
 
+
+
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function(req, res, next) {
     var allowedOrigins = ['https://narrow-plane.gomix.me', 'https://www.freecodecamp.com'];
@@ -20,6 +22,8 @@ if (!process.env.DISABLE_XORIGIN) {
     next();
   });
 }
+
+app.use(express.static(__dirname + '/public'));
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + '/views/index.html')
