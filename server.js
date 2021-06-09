@@ -8,6 +8,7 @@ var myApp = require('./myApp');
 var express = require('express');
 var app = express();
 const dotenv = require('dotenv'); 
+const { param } = require('./myApp');
 dotenv.config();
 
 
@@ -45,6 +46,11 @@ app.get(
     });
   }
 );
+
+app.get("/:word/echo", (req, res)=>{
+res.json({echo:req.params.word});   
+}); 
+
 
 
 app.get("/", function(req, res){
