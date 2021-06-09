@@ -33,6 +33,12 @@ if (!process.env.DISABLE_XORIGIN) {
   });
 }
 
+app.get('/now', function(req, res, next){
+  req.time = new Date().toString(); 
+  next(); 
+}, (req, res, next)=>{
+  res.json({time: req.time}); 
+});
 
 
 app.get("/", function(req, res){
