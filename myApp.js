@@ -19,7 +19,10 @@ const createManyPeople = (arrayOfPeople, done) => {
     new Person({name: "Jeff", age: 18, favoriteFoods: ["lamb", "beef"]})
   ]; 
 
-   Person.create(_arrayOfPeople).then((docs)=>done(null, docs)).catch((err)=>done(err));
+   Person.create(_arrayOfPeople, (err, data)=>{
+      if(err) done(err); 
+      done(null, data); 
+   });
 };
 
 const findPeopleByName = (personName, done) => {
