@@ -13,13 +13,15 @@ const createAndSavePerson = (done) => {
   });
 };
 
-const createManyPeople = (arrayOfPeople, done) => {
-  let _arrayOfPeople = [
-    new Person({name: "Bob", age: 22, favoriteFoods: ["turkey", "pork"]}), 
-    new Person({name: "Jeff", age: 18, favoriteFoods: ["lamb", "beef"]})
-  ]; 
+var arrayOfPeople = [
+  {name: "Frankie", age: 74, favoriteFoods: ["Del Taco"]},
+  {name: "Sol", age: 76, favoriteFoods: ["roast chicken"]},
+  {name: "Robert", age: 78, favoriteFoods: ["wine"]}
+];
 
-   Person.create(_arrayOfPeople, (err, data)=>{
+
+const createManyPeople = (arrayOfPeople, done) => {
+   Person.create(arrayOfPeople, (err, data)=>{
       if(err) done(err); 
       done(null, data); 
    });
